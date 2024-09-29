@@ -1,0 +1,49 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18pt;   
+}
+
+.calculadora{
+    width: 400px;
+    border: double purple 22px;
+    padding: 30px;
+}
+
+
+.calculadora__valores{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5%;
+}
+
+.calculadora__valores__primeiro__caixa{
+    background-color: orange;
+    border: 1px solid black;
+}
+
+.calculadora__valores__segundo__caixa{
+    background-color: orange;
+    border: 1px solid black;
+}
+
+.calculadora__opcao{
+    margin: 3%;
+}
+
+.calculadora__resultado{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 4%;
+    width: 50%;
+}
+
+.calculadora__resultado__caixa{
+    background-color: orange;
+    border: 1.5px solid black;
+}
+
+.negrito{
+    font-weight: bold;
+}

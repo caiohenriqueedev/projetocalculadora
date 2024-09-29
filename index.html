@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <script>
+      function calcularResultado() {
+        let valor1 = parseFloat(document.getElementById("valor1").value);
+        let valor2 = parseFloat(document.getElementById("valor2").value);
+        let resultado = document.getElementById("resultado");
+
+        let operacao = document.querySelector(
+          'input[name="opcao"]:checked'
+        ).value;
+
+        switch (operacao) {
+          case "soma":
+            resultado.value = valor1 + valor2;
+            break;
+
+          case "subtracao":
+            resultado.value = valor1 - valor2;
+            break;
+
+          case "multiplicacao":
+            resultado.value = valor1 * valor2;
+            break;
+
+          case "divisao":
+            if (valor2 !== 0) {
+              resultado.value = valor1 / valor2;
+            } else {
+              resultado.value = "Erro: Divisão por Zero 😪";
+            }
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="calculadora">
+        <form class="calculadora__valores">
+          <p class="calculadora__valores__primeiro">
+            <label class="negrito" for="valor1">Valor 1: </label>
+            <input
+              class="calculadora__valores__primeiro__caixa"
+              type="number"
+              id="valor1"
+              value=""
+              autofocus
+            />
+          </p>
+
+          <p class="calculadora__valores__segundo">
+            <label class="negrito" for="valor2">Valor 2: </label>
+            <input
+              class="calculadora__valores__segundo__caixa"
+              type="number"
+              id="valor2"
+              value=""
+              autofocus
+            />
+          </p>
+        </form>
+
+        <section class="calculadora__opcao">
+          <form>
+            <p class="negrito">Opção:</p>
+            <p>
+              <label>
+                <input type="radio" name="opcao" id="soma" value="soma" /> SOMA
+              </label>
+            </p>
+
+            <p>
+              <label>
+                <input
+                  type="radio"
+                  name="opcao"
+                  id="subtracao"
+                  value="subtracao"
+                />
+                SUBTRAÇÃO
+              </label>
+            </p>
+
+            <p>
+              <label>
+                <input
+                  type="radio"
+                  name="opcao"
+                  id="multiplicacao"
+                  value="multiplicacao"
+                />
+                MULTIPLICAÇÃO
+              </label>
+            </p>
+
+            <p>
+              <label>
+                <input type="radio" name="opcao" id="divisao" value="divisao" />
+                DIVISÃO
+              </label>
+            </p>
+          </form>
+        </section>
+
+        <section class="calculadora__resultado">
+          <label class="negrito" for="resultado"
+            >Resultado:
+            <input
+              class="calculadora__resultado__caixa"
+              type="text"
+              id="resultado"
+              value=""
+              readonly
+            />
+          </label>
+
+          <input type="button" onclick="calcularResultado()" value="Calcular" />
+        </section>
+    </main>
+  </body>
+</html>
